@@ -1,0 +1,19 @@
+extends layout
+
+block content
+  h1 Bugs in Queue: #{bugTickets.length}
+  table
+    tr
+      td
+        strong Priority
+      td 
+        strong Age
+      td 
+        strong Title      
+    each bug in bugTickets
+      tr
+        td #{bug.priority}
+        td #{bug.daysInQueue} 
+        td 
+          a(href=bug.href target='_blank') #{bug.summary}
+      
